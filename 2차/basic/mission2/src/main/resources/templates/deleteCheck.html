@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>삭제 확인</title>
+</head>
+<body>
+<h2>삭제하고 싶으면 비밀번호를 입력하세요</h2>
+<form th:action="@{/post/delete/{id}(id=${post.id})}" method="get">
+    <input name="pwd" type="text">
+    <button type="submit">확인</button>
+</form>
+</body>
+</html>

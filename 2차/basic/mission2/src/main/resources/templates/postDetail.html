@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>게시물 상세 페이지</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>제목</td>
+        <td th:text="${post.title}"></td>
+    </tr>
+    <tr>
+        <td>작성자</td>
+        <td th:text="${post.author}"></td>
+    </tr>
+    <tr>
+        <td>내용</td>
+        <td th:text="${post.content}"></td>
+    </tr>
+</table>
+<div>
+    <form th:action="@{/post/modify/{id}(id=${post.id})}" method="get">
+        <button type="submit">수정하기</button>
+    </form>
+</div>
+<div>
+    <form th:action="@{/post/deletePre/{id}(id=${post.id})}" method="get">
+        <button type="submit">삭제하기</button>
+    </form>
+</div>
+</body>
+</html>

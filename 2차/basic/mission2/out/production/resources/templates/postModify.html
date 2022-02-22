@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>게시글 수정 폼</title>
+</head>
+<body>
+<div class="layout">
+    <form th:action="@{/post/update/{id}(id=${post.id})}" method="get">
+        <input name="boardId" type="hidden" th:value="${post.boardId}">
+        <table>
+            <tr>
+                <td>제목</td>
+                <td><input name="title" type="text" th:value="${post.title}"></td>
+            </tr>
+            <tr>
+                <td>내용</td>
+                <td><textarea name="content" th:text="${post.content}"></textarea></td>
+            </tr>
+            <input name="author" type="hidden" th:value="${post.author}">
+            <input name="pwd" type="hidden" th:value="${post.pwd}">
+            <button type="submit">수정</button>
+        </table>
+    </form>
+</div>
+</body>
+</html>

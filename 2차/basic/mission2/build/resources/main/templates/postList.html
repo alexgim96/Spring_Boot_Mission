@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>게시물 목록</title>
+</head>
+<body>
+<div>
+    <form th:action="@{/board/modify/{id}(id=${board.id})}" method="get">
+        <button type="submit">수정하기</button>
+    </form>
+</div>
+<div>
+    <form th:action="@{/board/delete/{id}(id=${board.id})}" method="get">
+        <button type="submit">삭제하기</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>제목</th>
+                <th>글쓴이</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="post : ${postList}">
+                <div th:if="${post.boardId == board.id}">
+                    <td th:text="${post.id}"></td>
+                    <td th:text="${post.title}"></td>
+                    <td th:text="${post.author}"></td>
+                </div>
+            </tr>
+        </tbody>
+    </table>
+    <form th:action="@{/post/writePre/{id}(${board.id})}" method="get">
+        <button type="submit">글 작성</button>
+    </form>
+</div>
+</body>
+</html>

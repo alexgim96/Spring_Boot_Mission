@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>틀렸습니다. 다시 입력해 주세요</h2>
+<form th:action="@{/post/delete/{id}(id=${post.id})}" method="get">
+    <input name="pwd" type="text">
+    <button type="submit">확인</button>
+</form>
+</body>
+</html>

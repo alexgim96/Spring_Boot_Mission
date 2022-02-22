@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>게시글 작성 폼</title>
+</head>
+<body>
+<div class="layout">
+    <form action="/post/write" method="post">
+        <input name="boardId" type="hidden" value="%{post.boardId}">
+        <input name="title" type="text">
+        <textarea name="content"></textarea>
+        <input name="author" type="text">
+        <input name="pwd" type="text">
+        <button type="submit">작성</button>
+    </form>
+</div>
+</body>
+</html>
